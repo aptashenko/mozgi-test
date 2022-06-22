@@ -23,6 +23,9 @@
             </div>
         </header>
         <main class="hero">
+            <h2 class="hero__movingText">
+                FULL-CYCLE EVENT AGENCY FULL-CYCLE EVENT AGENCY
+            </h2>
             <div class="hero__circle"></div>
             <h1 class="hero__title">FULL-CYCLE EVENT AGENCY</h1>
             <div class="hero__circular">
@@ -52,6 +55,9 @@ export default {
 </script>
 
 <style lang="scss">
+
+
+
 .wrapper {
 }
 .header {
@@ -85,6 +91,19 @@ export default {
 
 .hero {
     padding: 0 15px;
+    &__movingText {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: max-content;
+        font-size: 28px;
+        line-height: 1.1;
+        text-transform: uppercase;
+        opacity: 0.1;
+        color: #000;
+        text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+        transform: rotate(45deg)
+    }
     &__background {
         position: relative;
     }
