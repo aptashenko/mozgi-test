@@ -63,19 +63,29 @@ h1, h2, h3, h4, ul, p, a {
 }
 
 .normalText {
-  bottom: 0;
-  left: -351px;
-  animation: normalText 10s linear infinite;
-  transform: rotateZ(300deg);
+  animation-name: normalText;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
   pointer-events: none;
+  @media (min-width: 768px) {
+    left: 0;
+    transform: rotateZ(306deg) translate(-500px, 0px);
+  }
 }
 
 .reversedText {
-  top: 0;
-  right: -358px;
-  animation: reversedText 10s linear infinite;
-  transform: rotateZ(120deg);
+  animation-name: reversedText;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   pointer-events: none;
+  @media (min-width: 768px) {
+      transform: rotateZ(126deg) translate(800px, 25px);
+    }
 }
 
 .backText {
@@ -91,18 +101,18 @@ h1, h2, h3, h4, ul, p, a {
 
 @keyframes normalText {
   0% {
-    transform: rotateZ(300deg) translateX(330px);
+    transform: rotateZ(306deg) translateX(-500px);
   }
   100% {
-    transform: rotateZ(300deg) translateX(-150px);
+    transform: rotateZ(306deg) translateX(-550px);
   }
 }
 @keyframes reversedText {
   0% {
-    transform: rotateZ(120deg) translateX(360px);
+    transform: rotateZ(126deg) translate(800px, 25px);
   }
   100% {
-    transform: rotateZ(120deg) translateX(-170px);
+    transform: rotateZ(126deg) translate(750px, 25px);
   }
 }
 

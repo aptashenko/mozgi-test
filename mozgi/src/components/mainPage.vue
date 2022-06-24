@@ -1,11 +1,11 @@
 <template>
     <div class="wrapper">
         <header class="header">
-            <div class="header__localization" @mouseenter="langShowOpacity()">
+            <div class="header__localization" @mouseenter="langShowOpacity()" @click.prevent="langHideOpacity()">
                 <img class="header__tongue" src="../assets/images/tongue.png" alt="">
                 <ul class="header__language" v-if="langShow">
                     <li class="header__language--item" ref="langOption" v-for="lang of langs" :key="lang"><a href="#"
-                            class="header__language--link" @click="langHideOpacity()">{{lang}}</a>
+                            class="header__language--link" @click.prevent="langHideOpacity()">{{lang}}</a>
                     </li>
                 </ul>
             </div>
@@ -26,8 +26,15 @@
                     </ul>
                 </nav>
             </div>
+            <nav class="header__navigation">
+                <ul class="header__list">
+                    <li class="header__item header__item--first"><a href="" class="header__link">WHERE?</a></li>
+                    <li class="header__item header__item--second"><a href="" class="header__link">WHAT?</a></li>
+                    <li class="header__item header__item--third"><a href="" class="header__link">WHO?</a></li>
+                </ul>
+            </nav>
         </header>
-        <main class="hero">
+        <main class=" hero">
             <div class="hero__background">
                 <div class="hero__backdrop"></div>
                 <div class="hero__circular">
@@ -94,6 +101,11 @@ export default {
 </script>
 
 <style lang="scss">
+
+
+
+
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -102,11 +114,44 @@ export default {
 }
 .header {
     display: flex;
-    position: relative;
+    // position: relative;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 0 15px;
+    &__navigation {
+        display: none;
+        @media (min-width: 768px) {
+            display: block;
+        }
+    }
+    &__list {
+        list-style: none;
+    }
+    &__item {
+        position: absolute;
+
+        &--first {
+            top: 50%;
+            left: -30px;
+            transform: rotate(270deg)
+        }
+        &--second {
+            top: 50%;
+            right: -15px;
+            transform: rotate(270deg)
+        }
+        &--third {
+            bottom: 0;
+            left: 50%;
+        }
+    }
+    &__burger {
+        @media (min-width: 768px) {
+            pointer-events: none;
+            opacity: 0;
+        }
+    }
     &__localization {
         display: flex;
         flex-direction: column;
@@ -146,6 +191,10 @@ export default {
     width: 100%;
     background: #bebebe;
     border-top: 1px solid rgba(0, 0, 0, 0.134);
+    @media (min-width: 768px) {
+        pointer-events: none;
+        opacity: 0;
+    }
     &__navigation {
         padding: 20px 0;
     }
