@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import '@/assets/style/animation.css'
 export default {
     name: 'heroCircular',
 }
@@ -43,15 +44,6 @@ export default {
 
     &:hover {
         animation: rotate 10s infinite linear;
-    }
-}
-
-@keyframes rotate {
-    0% {
-        transform: rotate(360deg);
-    }
-    100% {
-        transfrom: rotate(-360deg)
     }
 }
 

@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import '@/assets/style/animation.css'
 export default {
     name: 'headerPage',
     data() {
@@ -227,57 +228,6 @@ export default {
         &__tongue {
             width: 38px;
         }
-    }
-}
-
-@keyframes slideBottom {
-    0% {
-        margin-top: 35px;
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-        margin-top: 65px;
-    }
-}
-
-@keyframes linkBorder {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-@keyframes appearUA {
-    0% {
-        opacity: 0;
-        transform: translateY(-50%) translateX(0px);
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(-50%) translateX(40px);
-    }
-}
-@keyframes appearRU {
-    0% {
-        opacity: 0;
-        transform: translateY(-50%) translateX(0px);
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(-50%) translateX(85px);
     }
 }
 </style>

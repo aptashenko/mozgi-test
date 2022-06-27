@@ -6,19 +6,42 @@
                 </div>
                 <heroCircular />
             </div>
-            <h2 class="hero__title">FULL-CYCLE EVENT AGENCY</h2>
+            <h2 class="hero__title" ref="title">FULL-CYCLE EVENT AGENCY</h2>
         </div>
     </main>
 </template>
 
 <script>
 import heroCircular from './heroCircle.vue'
+
 export default {
     name: 'heroPage',
     components: {
         heroCircular,
     },
-
+    data() {
+        return {
+        }
+    },
+    computed: {
+    },
+    methods: {
+        titleMove() {
+            const halfX = this.$refs.title.getBoundingClientRect().width / 2;
+            const halfY = this.$refs.title.getBoundingClientRect().height / 2;
+            const centerX = halfX + this.$refs.title.getBoundingClientRect().left;
+            const centerY = halfY + this.$refs.title.getBoundingClientRect().top;
+            this.$refs.title.style.transform = `translate(${-halfX}px, ${-halfY}px)`;
+            window.addEventListener('mousemove', e => {
+                const x = (e.pageX - centerX) / 60;
+                const y = (e.pageY - centerY) / 60;
+                this.$refs.title.style.transform = `translate(${-halfX + x}px, ${-halfY + y}px)`;
+            })
+        }
+    },
+    mounted() {
+        this.titleMove();
+    }
 }
 </script>
 

@@ -1,11 +1,15 @@
 <template>
+  <div id="app">
     <headerPage />
     <heroPage />
+    <textLines />
+  </div>
 </template>
 
 <script>
 import headerPage from '@/components/headerPage';
 import heroPage from '@/components/heroPage';
+import textLines from '@/components/textLines';
 import '@/assets/style/normalize.scss';
 import '@/assets/style/font.css';
 
@@ -14,12 +18,7 @@ export default {
   components: {
     headerPage,
     heroPage,
-  },
-  data() {
-    return {
-    }
-  },
-  computed: {
+    textLines,
   },
 }
 </script>
@@ -33,6 +32,7 @@ body {
   font-family: 'GrtskGiga';
   color: #363636;
   height: 100%;
+  overflow: hidden;
 }
 #app {
   display: flex;
